@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function startLoadingAnimation() {
         const tl = gsap.timeline({
             delay: 0.5,
+            onComplete: () => {
+                loading.remove();
+            },
             defaults: { ease: "power3.out" }
         });
 
