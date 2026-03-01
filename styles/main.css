@@ -75,7 +75,13 @@ header .container>.row:nth-child(1) {
     padding-bottom: var(--section-padding);
 }
 
+#text-wrap p {
+    max-width: 334px;
+    text-align: initial;
+}
+
 #text-wrap p:nth-child(2) {
+    max-width: initial;
     margin-top: 40px;
     text-align: right;
 }
