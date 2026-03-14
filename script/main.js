@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const numsSection = document.querySelector('#nums')
 
-            const nums = numsSection.querySelectorAll("span")
+            const nums = numsSection.querySelectorAll("h1")
 
             gsap.fromTo(nums,
                 { y: "60%" },
