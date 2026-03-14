@@ -4,83 +4,83 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lazyLoadImages('.placeholder');
 
-    const loading = document.querySelector("#loading");
-    const imageGroup = loading.querySelector('.image-group');
-    const placeholders = imageGroup.querySelectorAll('.loading-image');
-    const loadingText = loading.querySelector('span');
+    // const loading = document.querySelector("#loading");
+    // const imageGroup = loading.querySelector('.image-group');
+    // const placeholders = imageGroup.querySelectorAll('.loading-image');
+    // const loadingText = loading.querySelector('span');
 
  
-    const images = imageGroup.querySelectorAll('img');
-    let imagesLoaded = 0;
+    // const images = imageGroup.querySelectorAll('img');
+    // let imagesLoaded = 0;
 
-    images.forEach(img => {
-        if (img.complete) {
-            console.log(img.complete)
-            imagesLoaded++;
-        } else {
-            img.addEventListener('load', () => {
-                imagesLoaded++;
-                if (imagesLoaded === images.length) startLoadingAnimation();
-            });
-            img.addEventListener('error', () => {
-                imagesLoaded++;
-                if (imagesLoaded === images.length) startLoadingAnimation();
-            });
-        }
-    });
+    // images.forEach(img => {
+    //     if (img.complete) {
+    //         console.log(img.complete)
+    //         imagesLoaded++;
+    //     } else {
+    //         img.addEventListener('load', () => {
+    //             imagesLoaded++;
+    //             if (imagesLoaded === images.length) startLoadingAnimation();
+    //         });
+    //         img.addEventListener('error', () => {
+    //             imagesLoaded++;
+    //             if (imagesLoaded === images.length) startLoadingAnimation();
+    //         });
+    //     }
+    // });
 
-    if (imagesLoaded === images.length) startLoadingAnimation();
-
- 
-    function startLoadingAnimation() {
-        const tl = gsap.timeline({
-            delay: 0.5,
-            onComplete: () => {
-                loading.remove();
-            },
-            defaults: { ease: "power3.out" }
-        });
+    // if (imagesLoaded === images.length) startLoadingAnimation();
 
  
-        tl.to(imageGroup, {
-            clipPath: "inset(0% 0% 0% 0%)",
-            duration: 2.5
-        });
+    // function startLoadingAnimation() {
+    //     const tl = gsap.timeline({
+    //         delay: 0.5,
+    //         onComplete: () => {
+    //             loading.remove();
+    //         },
+    //         defaults: { ease: "power3.out" }
+    //     });
 
  
-        tl.to(imageGroup, {
-            scaleX: 1,
-            scaleY: 1,
-            duration: 1.5,
-            ease: "power2.inOut"
-        }, "-=1.5");
+    //     tl.to(imageGroup, {
+    //         clipPath: "inset(0% 0% 0% 0%)",
+    //         duration: 2.5
+    //     });
+
+ 
+    //     tl.to(imageGroup, {
+    //         scaleX: 1,
+    //         scaleY: 1,
+    //         duration: 1.5,
+    //         ease: "power2.inOut"
+    //     }, "-=1.5");
 
     
-        tl.to(placeholders, {
-            clipPath: "inset(0% 0% 0% 0%)",
-            x: 0,
-            duration: 1.2,
-            stagger: 0.25,
-            ease: "power2.out",
-            onStart: () => placeholders.forEach(el => gsap.set(el, { x: -50 }))
-        }, "-=2.1");
+    //     tl.to(placeholders, {
+    //         clipPath: "inset(0% 0% 0% 0%)",
+    //         x: 0,
+    //         duration: 1.2,
+    //         stagger: 0.25,
+    //         ease: "power2.out",
+    //         onStart: () => placeholders.forEach(el => gsap.set(el, { x: -50 }))
+    //     }, "-=2.1");
 
  
-        tl.to(loadingText, {
+    //     tl.to(loadingText, {
             
-            clipPath: "inset(100% 0% 0% 0%)",
-            duration: 0.8,
-            ease: "power2.out"
-        }, "-=0.5");  
+    //         clipPath: "inset(100% 0% 0% 0%)",
+    //         duration: 0.8,
+    //         ease: "power2.out"
+    //     }, "-=0.5");  
 
       
-        tl.to(loading, {
-            y: "-100%",
-            clipPath: "inset(0% 0% 100% 0%)",
-            duration: 2,
-            ease: "power2.out"
-        }, "-=0.3");  
-    }
+    //     tl.to(loading, {
+    //         y: "-100%",
+    //         clipPath: "inset(0% 0% 100% 0%)",
+    //         duration: 2,
+    //         ease: "power2.out"
+    //     }, "-=0.3");  
+    // }
 
     // 
 
