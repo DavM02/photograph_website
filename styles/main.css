@@ -227,6 +227,10 @@ header .container>.row:nth-child(1) {
     color: var(--red);
 }
 
+#services .container {
+    overflow-x: clip;
+}
+
 /* advantages */
 
 #advantages {
