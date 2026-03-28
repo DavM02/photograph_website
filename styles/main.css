@@ -72,6 +72,7 @@ header .container>.row:nth-child(1) {
 #text-wrap {
     background-color: var(--red);
     display: none;
+    margin-top: -2px;
     padding-bottom: var(--section-padding);
 }
 
